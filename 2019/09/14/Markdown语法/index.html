@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.3.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon32.png?v=7.3.0">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon16.png?v=7.3.0">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.3.0" color="#222">
+
+<link rel="stylesheet" href="/css/main.css?v=7.3.0">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.3.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":true,"show_result":true,"style":null},
+    back2top: {"enable":true,"sidebar":true,"scrollpercent":true},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: './public/search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    }
+  };
+</script>
+
+  <meta name="description" content="本文介绍了Mardown的基本语法">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Markdown语法">
+<meta property="og:url" content="http://TangSong99.github.io/2019/09/14/Markdown语法/index.html">
+<meta property="og:site_name" content="唐宋丶">
+<meta property="og:description" content="本文介绍了Mardown的基本语法">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/2019/09/14/Markdown语法/1.png">
+<meta property="og:image" content="http://i2.tiimg.com/669018/1f01b59ed75569f7.jpg">
+<meta property="og:image" content="en-resource://database/640:0">
+<meta property="og:updated_time" content="2019-09-14T12:59:22.022Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Markdown语法">
+<meta name="twitter:description" content="本文介绍了Mardown的基本语法">
+<meta name="twitter:image" content="http://yoursite.com/2019/09/14/Markdown语法/1.png">
+  <link rel="canonical" href="http://TangSong99.github.io/2019/09/14/Markdown语法/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>Markdown语法 | 唐宋丶</title>
+  <meta name="generator" content="Hexo 3.9.0">
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+  <div class="container">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">唐宋丶</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">世中逢尔.</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+      
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-about">
+      
+    
+      
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-tags">
+      
+    
+      
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签<span class="badge">0</span></a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-categories">
+      
+    
+      
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类<span class="badge">0</span></a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+      
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">2</span></a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a href="javascript:;" class="popup-trigger">
+        
+          <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+      </li>
+    
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-wrapper">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="搜索..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+
+  <a href="https://github.com/TangSong99" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+            
+
+          <div id="content" class="content page-post-detail">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  <article class="post" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://TangSong99.github.io/2019/09/14/Markdown语法/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="唐宋丶">
+      <meta itemprop="description" content="在努力在生活在前进.">
+      <meta itemprop="image" content="/images/tx.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="唐宋丶">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">Markdown语法
+
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-09-14 19:57:47 / 修改时间：20:59:22" itemprop="dateCreated datePublished" datetime="2019-09-14T19:57:47+08:00">2019-09-14</time>
+            </span>
+          
+            
+
+            
+          
+
+          
+            <span class="post-meta-item" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>本文介绍了Mardown的基本语法<br><img src="//yoursite.com/2019/09/14/Markdown语法/1.png" alt="bj"></p>
+<a id="more"></a>
+<h4 id="1-设置分级标题"><a href="#1-设置分级标题" class="headerlink" title="1.设置分级标题"></a>1.设置分级标题</h4><figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"># 一级标题</span><br><span class="line">## 二级标题</span><br><span class="line">### 三级标题</span><br><span class="line">#### 四级标题</span><br><span class="line">##### 五级标题</span><br><span class="line">###### 六级标题</span><br></pre></td></tr></table></figure>
+
+<h1 id="一级标题"><a href="#一级标题" class="headerlink" title="一级标题"></a>一级标题</h1><h2 id="二级标题"><a href="#二级标题" class="headerlink" title="二级标题"></a>二级标题</h2><h3 id="三级标题"><a href="#三级标题" class="headerlink" title="三级标题"></a>三级标题</h3><h4 id="四级标题"><a href="#四级标题" class="headerlink" title="四级标题"></a>四级标题</h4><h5 id="五级标题"><a href="#五级标题" class="headerlink" title="五级标题"></a>五级标题</h5><h6 id="六级标题"><a href="#六级标题" class="headerlink" title="六级标题"></a>六级标题</h6><hr>
+<h4 id="2-加粗、斜体、下划线、删除线"><a href="#2-加粗、斜体、下划线、删除线" class="headerlink" title="2.加粗、斜体、下划线、删除线"></a>2.加粗、斜体、下划线、删除线</h4><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">唐宋丶    **唐宋丶**  *唐宋丶*  <span class="tag">&lt;<span class="name">u</span>&gt;</span>唐宋丶<span class="tag">&lt;/<span class="name">u</span>&gt;</span>  ~~唐宋丶~~  </span><br><span class="line">***~~<span class="tag">&lt;<span class="name">u</span>&gt;</span>唐宋丶<span class="tag">&lt;/<span class="name">u</span>&gt;</span>~~***</span><br></pre></td></tr></table></figure>
+
+<p>唐宋丶    <strong>唐宋丶</strong>  <em>唐宋丶</em>  <u>唐宋丶</u>  <del>唐宋丶</del><br><strong><em><del><u>唐宋丶</u></del></em></strong></p>
+<hr>
+<h4 id="3-分割线"><a href="#3-分割线" class="headerlink" title="3.分割线"></a>3.分割线</h4><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="emphasis">***</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<hr>
+<h4 id="4-引用文本"><a href="#4-引用文本" class="headerlink" title="4.引用文本"></a>4.引用文本</h4><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="quote">&gt;  如今漂泊赋沉沦，</span></span><br><span class="line"><span class="code">               剑光不及饮者名，</span></span><br><span class="line"><span class="code">                            落魄江湖载酒行 .</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>   如今漂泊赋沉沦，<br>                 剑光不及饮者名，<br>                              落魄江湖载酒行 .</p>
+</blockquote>
+<hr>
+<h4 id="5-符号列表、数字列表"><a href="#5-符号列表、数字列表" class="headerlink" title="5.符号列表、数字列表"></a>5.符号列表、数字列表</h4><figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span> 数字列表<span class="number">1</span></span><br><span class="line"><span class="number">2.</span> 数字列表<span class="number">2</span></span><br><span class="line"><span class="number">3.</span> 数字列表<span class="number">3</span></span><br><span class="line">* 符号列表<span class="number">1</span></span><br><span class="line">* 符号列表<span class="number">2</span></span><br><span class="line">* 符号列表<span class="number">3</span></span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>数字列表1</li>
+<li>数字列表2</li>
+<li>数字列表3</li>
+</ol>
+<ul>
+<li>符号列表1</li>
+<li>符号列表2</li>
+<li>符号列表3</li>
+</ul>
+<hr>
+<h4 id="6-待办事项（多选框）"><a href="#6-待办事项（多选框）" class="headerlink" title="6.待办事项（多选框）"></a>6.待办事项（多选框）</h4><figure class="highlight accesslog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">待办√</span><br><span class="line">* <span class="string">[x]</span> 待办事项一</span><br><span class="line">* <span class="string">[ ]</span> 待办事项二</span><br><span class="line">* <span class="string">[ ]</span> 待办事项三</span><br></pre></td></tr></table></figure>
+
+<p>待办√</p>
+<ul>
+<li><input checked disabled type="checkbox"> 待办事项一</li>
+<li><input disabled type="checkbox"> 待办事项二</li>
+<li><input disabled type="checkbox"> 待办事项三</li>
+</ul>
+<hr>
+<h4 id="7-插入链接"><a href="#7-插入链接" class="headerlink" title="7.插入链接"></a>7.插入链接</h4><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="string">唐宋丶的博客链接 戳这里戳这里&gt;_&lt;</span>](<span class="link">https://tangsong99.github.io/</span>)</span><br></pre></td></tr></table></figure>
+
+<p><a href="https://tangsong99.github.io/" target="_blank" rel="noopener">唐宋丶的博客链接 戳这里戳这里&gt;_&lt;</a></p>
+<hr>
+<h4 id="8-插入图片"><a href="#8-插入图片" class="headerlink" title="8.插入图片"></a>8.插入图片</h4><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![<span class="string">image</span>](<span class="link">http://i2.tiimg.com/669018/1f01b59ed75569f7.jpg</span>)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![<span class="string">fd0cfba1541a9b0b5e8a90911f66f010.png</span>](<span class="link">en-resource://database/640:0</span>)@w=500</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li><p>网络图片不稳定（B站/花瓣图无法显示）<br><img src="http://i2.tiimg.com/669018/1f01b59ed75569f7.jpg" alt="image"></p>
+</li>
+<li><p>本地图片格式支持 jpg、png 和 gif<br>针对插入的本地图片可以控制图片大小，在拖拽、拷贝或者点击插入本地图片之后，直接在图片名称后面（无需空格）添加以下语法均可以按照以下要求控制图片大小：</p>
+</li>
+</ol>
+<ul>
+<li>@w=300</li>
+<li>@h=150</li>
+<li>@w=200h=100</li>
+<li>@h=100w=200<br><img src="en-resource://database/640:0" alt="fd0cfba1541a9b0b5e8a90911f66f010.png">@w=500</li>
+</ul>
+<hr>
+<h4 id="9-插入表格"><a href="#9-插入表格" class="headerlink" title="9.插入表格"></a>9.插入表格</h4><figure class="highlight gherkin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">|<span class="string"> 课程表 </span>|<span class="string"> 工作日 </span>|<span class="string"> 周六 </span>|<span class="string"> 周日 </span>|</span><br><span class="line">|<span class="string"> --- </span>|<span class="string"> --- </span>|<span class="string"> --- </span>|<span class="string"> --- </span>|</span><br><span class="line">|<span class="string"> 上午 </span>|<span class="string"> 划水 </span>|<span class="string"> 划水 </span>|<span class="string"> 划水 </span>|</span><br><span class="line">|<span class="string"> 下午 </span>|<span class="string"> 划水 </span>|<span class="string"> 划水 </span>|<span class="string"> 划水 </span>|</span><br><span class="line">|<span class="string"> 晚上 </span>|<span class="string"> 划水 </span>|<span class="string"> 划水 </span>|<span class="string"> 划水</span>|</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th>课程表</th>
+<th>工作日</th>
+<th>周六</th>
+<th>周日</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>上午</td>
+<td>划水</td>
+<td>划水</td>
+<td>划水</td>
+</tr>
+<tr>
+<td>下午</td>
+<td>划水</td>
+<td>划水</td>
+<td>划水</td>
+</tr>
+<tr>
+<td>晚上</td>
+<td>划水</td>
+<td>划水</td>
+<td>划水</td>
+</tr>
+<tr>
+<td>***</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>#### 10.插入图表</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><figure class="highlight dns"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">* 饼状图</span><br><span class="line">```chart</span><br><span class="line">,Budget,Income,Expenses,Debt</span><br><span class="line">June,<span class="number">5000,8000</span>,<span class="number">4000,6000</span></span><br><span class="line">July,<span class="number">3000,1000</span>,<span class="number">4000,3000</span></span><br><span class="line">Aug,<span class="number">5000,7000</span>,<span class="number">6000,3000</span></span><br><span class="line">Sep,<span class="number">7000,2000</span>,<span class="number">3000,1000</span></span><br><span class="line">Oct,<span class="number">6000,5000</span>,<span class="number">4000,2000</span></span><br><span class="line">Nov,<span class="number">4000,3000</span>,<span class="number">5000</span>,</span><br><span class="line"></span><br><span class="line">type: pie</span><br><span class="line">title: Monthly Revenue</span><br><span class="line">x.title: Amount</span><br><span class="line">y.title: Month</span><br><span class="line">y.suffix: $</span><br><span class="line">//</span><br></pre></td></tr></table></figure></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<figure class="highlight dns"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">饼状图、折线图、柱状图和条形图，只需将 type 改为对应的pie、line、column 和 bar。</span><br><span class="line">* 饼状图</span><br><span class="line">```chart</span><br><span class="line">,Budget,Income,Expenses,Debt</span><br><span class="line">June,<span class="number">5000,8000</span>,<span class="number">4000,6000</span></span><br><span class="line">July,<span class="number">3000,1000</span>,<span class="number">4000,3000</span></span><br><span class="line">Aug,<span class="number">5000,7000</span>,<span class="number">6000,3000</span></span><br><span class="line">Sep,<span class="number">7000,2000</span>,<span class="number">3000,1000</span></span><br><span class="line">Oct,<span class="number">6000,5000</span>,<span class="number">4000,2000</span></span><br><span class="line">Nov,<span class="number">4000,3000</span>,<span class="number">5000</span>,</span><br><span class="line"></span><br><span class="line">type: pie</span><br><span class="line">title: Monthly Revenue</span><br><span class="line">x.title: Amount</span><br><span class="line">y.title: Month</span><br><span class="line">y.suffix: $</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>折线图</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">,Budget,Income,Expenses,Debt</span><br><span class="line">June,5000,8000,4000,6000</span><br><span class="line">July,3000,1000,4000,3000</span><br><span class="line">Aug,5000,7000,6000,3000</span><br><span class="line">Sep,7000,2000,3000,1000</span><br><span class="line">Oct,6000,5000,4000,2000</span><br><span class="line">Nov,4000,3000,5000,</span><br><span class="line"></span><br><span class="line">type: line</span><br><span class="line">title: Monthly Revenue</span><br><span class="line">x.title: Amount</span><br><span class="line">y.title: Month</span><br><span class="line">y.suffix: $</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>柱状图</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">,Budget,Income,Expenses,Debt</span><br><span class="line">June,5000,8000,4000,6000</span><br><span class="line">July,3000,1000,4000,3000</span><br><span class="line">Aug,5000,7000,6000,3000</span><br><span class="line">Sep,7000,2000,3000,1000</span><br><span class="line">Oct,6000,5000,4000,2000</span><br><span class="line">Nov,4000,3000,5000,</span><br><span class="line"></span><br><span class="line">type: column</span><br><span class="line">title: Monthly Revenue</span><br><span class="line">x.title: Amount</span><br><span class="line">y.title: Month</span><br><span class="line">y.suffix: $</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>条形图</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">,Budget,Income,Expenses,Debt</span><br><span class="line">June,5000,8000,4000,6000</span><br><span class="line">July,3000,1000,4000,3000</span><br><span class="line">Aug,5000,7000,6000,3000</span><br><span class="line">Sep,7000,2000,3000,1000</span><br><span class="line">Oct,6000,5000,4000,2000</span><br><span class="line">Nov,4000,3000,5000,</span><br><span class="line"></span><br><span class="line">type: bar</span><br><span class="line">title: Monthly Revenue</span><br><span class="line">x.title: Amount</span><br><span class="line">y.title: Month</span><br><span class="line">y.suffix: $</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<hr>
+<h4 id="11-插入行内代码或代码块"><a href="#11-插入行内代码或代码块" class="headerlink" title="11.插入行内代码或代码块"></a>11.插入行内代码或代码块</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">```python</span><br><span class="line"><span class="comment">#!/usr/bin/python</span></span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line">line = <span class="string">"Cats are smarter than dogs"</span></span><br><span class="line">matchObj = re.match( <span class="string">r'(.*) are (.*?) .*'</span>, line, re.M|re.I)</span><br><span class="line"><span class="keyword">if</span> matchObj:</span><br><span class="line">    <span class="keyword">print</span> <span class="string">"matchObj.group() : "</span>, matchObj.group()</span><br><span class="line">    <span class="keyword">print</span> <span class="string">"matchObj.group(1) : "</span>, matchObj.group(<span class="number">1</span>)</span><br><span class="line">    <span class="keyword">print</span> <span class="string">"matchObj.group(2) : "</span>, matchObj.group(<span class="number">2</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="keyword">print</span> <span class="string">"No match!!"</span></span><br><span class="line">//</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">```python</span><br><span class="line"><span class="comment">#!/usr/bin/python</span></span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line">line = <span class="string">"Cats are smarter than dogs"</span></span><br><span class="line">matchObj = re.match( <span class="string">r'(.*) are (.*?) .*'</span>, line, re.M|re.I)</span><br><span class="line"><span class="keyword">if</span> matchObj:</span><br><span class="line">    <span class="keyword">print</span> <span class="string">"matchObj.group() : "</span>, matchObj.group()</span><br><span class="line">    <span class="keyword">print</span> <span class="string">"matchObj.group(1) : "</span>, matchObj.group(<span class="number">1</span>)</span><br><span class="line">    <span class="keyword">print</span> <span class="string">"matchObj.group(2) : "</span>, matchObj.group(<span class="number">2</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="keyword">print</span> <span class="string">"No match!!"</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h4 id="12-插入数学公式"><a href="#12-插入数学公式" class="headerlink" title="12.插入数学公式"></a>12.插入数学公式</h4><figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">```math</span><br><span class="line">e^&#123;i\pi&#125; + <span class="number">1</span> = <span class="number">0</span></span><br><span class="line"><span class="comment">//</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight autohotkey"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">```math</span><br><span class="line">e^&#123;i\pi&#125; + <span class="number">1</span> = <span class="number">0</span></span><br></pre></td></tr></table></figure>
+
+<p>更多数学公式的输入可以参考：<br><a href="https://khan.github.io/KaTeX/docs/supported.html" target="_blank" rel="noopener">https://khan.github.io/KaTeX/docs/supported.html</a></p>
+<hr>
+<h4 id="13-插入流程图"><a href="#13-插入流程图" class="headerlink" title="13.插入流程图"></a>13.插入流程图</h4><figure class="highlight coq"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">```mermaid</span><br><span class="line">graph TD</span><br><span class="line">A[模块A] --&gt;|<span class="type">A1</span>| <span class="type">B</span>(模块B)</span><br><span class="line">B --&gt; C&#123;判断条件C&#125;</span><br><span class="line">C --&gt;|<span class="type">条件C1</span>| <span class="type">D</span>[模块D]</span><br><span class="line">C --&gt;|<span class="type">条件C2</span>| <span class="type">E</span>[模块E]</span><br><span class="line">C --&gt;|<span class="type">条件C3</span>| <span class="type">F</span>[模块F]</span><br><span class="line">//</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight coq"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">```mermaid</span><br><span class="line">graph TD</span><br><span class="line">A[模块A] --&gt;|<span class="type">A1</span>| <span class="type">B</span>(模块B)</span><br><span class="line">B --&gt; C&#123;判断条件C&#125;</span><br><span class="line">C --&gt;|<span class="type">条件C1</span>| <span class="type">D</span>[模块D]</span><br><span class="line">C --&gt;|<span class="type">条件C2</span>| <span class="type">E</span>[模块E]</span><br><span class="line">C --&gt;|<span class="type">条件C3</span>| <span class="type">F</span>[模块F]</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h4 id="14-插入时序图"><a href="#14-插入时序图" class="headerlink" title="14.插入时序图"></a>14.插入时序图</h4><figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">```mermaid</span><br><span class="line">sequenceDiagram</span><br><span class="line">A-&gt;&gt;B: 是否已收到消息？</span><br><span class="line">B--&gt;&gt;A: 已收到消息</span><br><span class="line"><span class="comment">//</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">```mermaid</span><br><span class="line">sequenceDiagram</span><br><span class="line">A-&gt;&gt;B: 是否已收到消息？</span><br><span class="line">B<span class="comment">--&gt;&gt;A: 已收到消息</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h4 id="15-插入甘特图"><a href="#15-插入甘特图" class="headerlink" title="15.插入甘特图"></a>15.插入甘特图</h4><figure class="highlight x86asm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">```</span>mermaid</span><br><span class="line">gantt</span><br><span class="line">title 甘特图</span><br><span class="line">dateFormat  YYYY-MM-<span class="built_in">DD</span></span><br><span class="line"><span class="meta">section</span> 项目A</span><br><span class="line">任务<span class="number">1</span>           :a1, <span class="number">2018</span>-<span class="number">06</span>-<span class="number">06</span>, <span class="number">30d</span></span><br><span class="line">任务<span class="number">2</span>     :after a1  , <span class="number">20d</span></span><br><span class="line"><span class="meta">section</span> 项目B</span><br><span class="line">任务<span class="number">3</span>      :<span class="number">2018</span>-<span class="number">06</span>-<span class="number">12</span>  , <span class="number">12d</span></span><br><span class="line">任务<span class="number">4</span>      : <span class="number">24d</span></span><br><span class="line">//</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight x86asm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">```</span>mermaid</span><br><span class="line">gantt</span><br><span class="line">title 甘特图</span><br><span class="line">dateFormat  YYYY-MM-<span class="built_in">DD</span></span><br><span class="line"><span class="meta">section</span> 项目A</span><br><span class="line">任务<span class="number">1</span>           :a1, <span class="number">2018</span>-<span class="number">06</span>-<span class="number">06</span>, <span class="number">30d</span></span><br><span class="line">任务<span class="number">2</span>     :after a1  , <span class="number">20d</span></span><br><span class="line"><span class="meta">section</span> 项目B</span><br><span class="line">任务<span class="number">3</span>      :<span class="number">2018</span>-<span class="number">06</span>-<span class="number">12</span>  , <span class="number">12d</span></span><br><span class="line">任务<span class="number">4</span>      : <span class="number">24d</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h4 id="16-设置目录、快捷键"><a href="#16-设置目录、快捷键" class="headerlink" title="16.设置目录、快捷键"></a>16.设置目录、快捷键</h4><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[TOC]</span><br></pre></td></tr></table></figure>
+
+<p>[TOC]<br>（由于第一个分级标题出现一级标题所以显示失败）</p>
+<hr>
+<h5 id="写在最后"><a href="#写在最后" class="headerlink" title="写在最后"></a>写在最后</h5><p>Markdown语法编辑器有很多，大多人首推Typora，我平时做笔记的印象笔记也支持就直接用了，可以实时查看很方便。<br>| 新建 Markdown 笔记 | Ctrl+Alt+D |<br>| — | — |<br>| 粗体 | Ctrl+B |<br>| 斜体 | Ctrl+I |<br>| 删除线 | Ctrl+T |<br>| 下划线 |Ctrl+U  |<br>| 分隔线 | Ctrl+Shift+- |<br>| 编号列表 | Ctrl+Shift+O |<br>| 项目符号列表 | Ctrl+Shift+W |<br>| 插入待办事项 | Ctrl+Shift+C |<br>| 代码块 | Ctrl+Shift+L |<br>| 插入日期和时间 | Alt+Shift+D |<br>| 撤销 | Ctrl+Z |<br>| 在笔记内搜索 | Ctrl+F |</p>
+
+    </div>
+
+    
+    
+    
+        
+      
+        <div id="reward-container">
+  <div>请我喝杯快乐水叭QAQ.</div>
+  <button id="reward-button" disable="enable" onclick="var qr = document.getElementById(&quot;qr&quot;); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+        
+      
+      <div style="display: inline-block">
+        <img src="/images/wechatpay.png" alt="唐宋丶 微信支付">
+        <p>微信支付</p>
+      </div>
+
+  </div>
+</div>
+
+      
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>唐宋丶</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://TangSong99.github.io/2019/09/14/Markdown语法/" title="Markdown语法">http://TangSong99.github.io/2019/09/14/Markdown语法/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh-Hans" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
+</ul>
+</div>
+
+      
+
+	  <div>
+	    
+	    <div>
+<script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/buttonLite.js#style=-1&amp;uuid=&amp;pophcol=2&amp;lang=zh"></script><script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/bshareC0.js"></script>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">已经到底啦(〃'▽'〃)</div>
+        <div class="bshare-custom"><div class="bsPromo bsPromo2"></div><a title="分享到QQ空间" class="bshare-qzone"></a><a title="分享到QQ好友" class="bshare-qqim" href="javascript:void(0);"></a><a title="分享到微信" class="bshare-weixin" href="javascript:void(0);"></a><a title="分享到新浪微博" class="bshare-sinaminiblog" href="javascript:void(0);"></a><a title="分享到Facebook" class="bshare-facebook" href="javascript:void(0);"></a><a title="分享到Twitter" class="bshare-twitter" href="javascript:void(0);"></a><a title="更多平台" class="bshare-more bshare-more-icon more-style-addthis"></a></div>
+    
+</div>
+
+	    
+	  </div>
+	  
+      <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/2019/08/16/hello-world/" rel="next" title="Hello World">
+                  <i class="fa fa-chevron-left"></i> Hello World
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+            </div>
+          </div>
+        
+      </footer>
+    
+  </div>
+  
+  
+  
+  </article>
+
+  </div>
+
+
+          </div>
+          
+    
+    
+  <div class="comments" id="comments">
+    <div id="lv-container" data-id="city" data-uid="MTAyMC80NjIxMC8yMjcyMQ=="></div>
+  </div>
+  
+  
+
+        </div>
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image"
+      src="/images/tx.jpg"
+      alt="唐宋丶">
+  <p class="site-author-name" itemprop="name">唐宋丶</p>
+  <div class="site-description motion-element" itemprop="description">在努力在生活在前进.</div>
+</div>
+  <nav class="site-state motion-element">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">2</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+    
+  </nav>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://github.com/TangSong99" title="GitHub &rarr; https://github.com/TangSong99" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://user.qzone.qq.com/348958520" title="QZone &rarr; https://user.qzone.qq.com/348958520" rel="noopener" target="_blank"><i class="fa fa-fw fa-qq"></i>QZone</a>
+      </span>
+    
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    
+  
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh-Hans" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element links-of-blogroll-block">
+    <div class="links-of-blogroll-title">
+      <i class="fa  fa-fw fa-link"></i>
+      友链
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://cnjeenosugar.github.io" title="https://cnjeenosugar.github.io" rel="noopener" target="_blank">稀饭</a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+        </div>
+      </div>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=200 height=86 src="//music.163.com/outchain/player?type=2&id=32408263&auto=1&height=66"></iframe>
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+			
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-设置分级标题"><span class="nav-number">1.</span> <span class="nav-text">1.设置分级标题</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#一级标题"><span class="nav-number"></span> <span class="nav-text">一级标题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#二级标题"><span class="nav-number"></span> <span class="nav-text">二级标题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#三级标题"><span class="nav-number"></span> <span class="nav-text">三级标题</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#四级标题"><span class="nav-number">1.</span> <span class="nav-text">四级标题</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#五级标题"><span class="nav-number">1.1.</span> <span class="nav-text">五级标题</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#六级标题"><span class="nav-number">1.1.1.</span> <span class="nav-text">六级标题</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-加粗、斜体、下划线、删除线"><span class="nav-number">2.</span> <span class="nav-text">2.加粗、斜体、下划线、删除线</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-分割线"><span class="nav-number">3.</span> <span class="nav-text">3.分割线</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-引用文本"><span class="nav-number">4.</span> <span class="nav-text">4.引用文本</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-符号列表、数字列表"><span class="nav-number">5.</span> <span class="nav-text">5.符号列表、数字列表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-待办事项（多选框）"><span class="nav-number">6.</span> <span class="nav-text">6.待办事项（多选框）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-插入链接"><span class="nav-number">7.</span> <span class="nav-text">7.插入链接</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#8-插入图片"><span class="nav-number">8.</span> <span class="nav-text">8.插入图片</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#9-插入表格"><span class="nav-number">9.</span> <span class="nav-text">9.插入表格</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#11-插入行内代码或代码块"><span class="nav-number">10.</span> <span class="nav-text">11.插入行内代码或代码块</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#12-插入数学公式"><span class="nav-number">11.</span> <span class="nav-text">12.插入数学公式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#13-插入流程图"><span class="nav-number">12.</span> <span class="nav-text">13.插入流程图</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#14-插入时序图"><span class="nav-number">13.</span> <span class="nav-text">14.插入时序图</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#15-插入甘特图"><span class="nav-number">14.</span> <span class="nav-text">15.插入甘特图</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#16-设置目录、快捷键"><span class="nav-number">15.</span> <span class="nav-text">16.设置目录、快捷键</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#写在最后"><span class="nav-number">15.1.</span> <span class="nav-text">写在最后</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+      
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">唐宋丶</span>
+</div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-user"></i>
+    </span>
+    <span class="site-uv" title="总访客量">
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  
+    <span class="post-meta-divider">|</span>
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-eye"></i>
+    </span>
+    <span class="site-pv" title="总访问量">
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+  </div>
+
+  
+  <script src="/lib/jquery/index.js?v=3.4.1"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+<script src="/js/utils.js?v=7.3.0"></script><script src="/js/motion.js?v=7.3.0"></script>
+<script src="/js/schemes/pisces.js?v=7.3.0"></script>
+
+<script src="/js/next-boot.js?v=7.3.0"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <script src="/js/local-search.js?v=7.3.0"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+
+  
+  <script src="/js/scrollspy.js?v=7.3.0"></script><script src="/js/post-details.js?v=7.3.0"></script>
+
+
+<script>
+  window.livereOptions = {
+    refer: location.pathname.replace(CONFIG.root, '').replace('index.html', '')
+  };
+  (function(d, s) {
+    var j, e = d.getElementsByTagName(s)[0];
+    if (typeof LivereTower === 'function') { return; }
+    j = d.createElement(s);
+    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+    j.async = true;
+    e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+</script>
+
+  <!-- 页面点击小红心 -->
+  <script type="text/javascript" src="/js/clicklove.js"></script>
+</body>
+</html>
