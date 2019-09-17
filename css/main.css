@@ -477,6 +477,7 @@ pre code {
 }
 .highlight *::selection {
   background: #373b41;
+  overflow: auto;
 }
 .highlight pre {
   border: none;
@@ -1825,7 +1826,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #6708ff;
+  background: #21ff9d;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
