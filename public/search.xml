@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[PC端查看连接过的WiFi密码]]></title>
+    <url>%2F2019%2F10%2F01%2FPC%E7%AB%AF%E6%9F%A5%E7%9C%8B%E8%BF%9E%E6%8E%A5%E8%BF%87%E7%9A%84WiFi%E5%AF%86%E7%A0%81%2F</url>
+    <content type="text"><![CDATA[只需10秒，无需工具，PC端查看连接过的WiFi密码 Win+R 输入cmd 粘贴下面语句 1for /f "skip=9 tokens=1,2 delims=:" %i in ('netsh wlan show profiles') do @echo %j | findstr -i -v echo | netsh wlan show profiles %j key=clear 结果如图]]></content>
+  </entry>
+  <entry>
     <title><![CDATA[智慧树刷课]]></title>
     <url>%2F2019%2F09%2F17%2F%E6%99%BA%E6%85%A7%E6%A0%91%E5%88%B7%E8%AF%BE%2F</url>
     <content type="text"><![CDATA[智慧树刷课教程 演示因为代刷网课赚钱会被抓，只好免费分享出来了呜呜呜。智慧树网课刷课（超星尔雅没试过） 代码123456789101112131415161718192021222324252627282930313233343536373839404142(function () &#123; const MAX_DELAY = 60 // 切课时的最大延迟，单位：秒 const sleep = (time) =&gt; new Promise((resolve) =&gt; setTimeout(resolve, time)) const start = async function () &#123; console.log('智慧树助手已启动，唐宋丶https://tangsong99.github.io') while (true) &#123; console.log('正在检查') const delay = Math.floor(Math.random() * MAX_DELAY * 1000) + 1000 if (!/1\.5/.test($('.speedBox').attr('style'))) &#123; console.log('提升到1.5倍速') $('.speedTab15').click() &#125; if (!/liuchang/.test($('.definiBox').attr('style'))) &#123; console.log('更改画质') $('.line1bq').click() &#125; if ($('.volumeBox').find('.passVolume').width() != 0) &#123; console.log('静音') $('.volumeIcon').click() &#125; if ($('.playButton').length &gt; 0) &#123; console.log('点击播放') $('.playButton').click() &#125; if ($('.popbtn_cancel')[0]) &#123; console.log('发现弹题，将在' + delay / 1000 + ' 秒后点击关闭') await sleep(delay / 2) const iframe = document.getElementById('tmDialog_iframe').contentWindow iframe.document.querySelector('.answerOption label').click() await sleep(delay / 2) $('.popbtn_cancel').click() &#125; if ($('.current_play').find('.progressbar').width() == $('.current_play').find('.progressbar_box').width()) &#123; console.log('本节完成，' + delay / 1000 + ' 秒后将切到下一课') await sleep(delay) $('.current_play').nextAll('.video')[0].click() &#125; await sleep(1000) &#125; &#125; start()&#125;()) 最后网课一般都有警告什么刷课会抓，但是我刷了好几个都没啥事，如有被封，后果自负。附：网课答案我是从微省app查的，微信公众号的答案分享平台生命周期太短了。]]></content>
